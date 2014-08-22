@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:local="*"
+		xmlns:skins="skins.*"
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		actionBarVisible="false" creationComplete="view1_creationCompleteHandler(event)"
+		tabBarVisible="false" title="Home" xmlns:renders="renders.*">
+	
+	<fx:Script source="../Class/ViewProfile.as"/>
+	<fx:Declarations>
+		<s:Callout id="defaultCallout" width="240" height="210"
+				   mouseDown="defaultCallout_mouseDownHandler(event)"
+				   mouseDownOutside="onMouseDownOutside(event)" verticalPosition="after">
+			<s:layout>
+				<s:VerticalLayout/>
+			</s:layout> 
+			<renders:renderBtnContacts click="rendercatalogoproductos1_clickHandler(event)"/>
+			<renders:renderBtnLogOut click="NativeApplication.nativeApplication.exit();"/>	
+		</s:Callout>
+		<s:Parallel id="parallel2" duration="500" startDelay="1" target="{imgCorreo}">
+			<mx:Move xFrom="2000"/>
+		</s:Parallel>
+		<s:Parallel id="parallel3" duration="300" startDelay="1" target="{img}">
+			<mx:Fade alphaFrom=".5" alphaTo="1"/>
+		</s:Parallel>
+	</fx:Declarations>
+	
+	<s:Rect id="header" y="0" width="100%" height="33">
+		<s:fill>
+			<s:BitmapFill source="@Embed('/images/fondo_header.png')" fillMode="repeat"/>
+		</s:fill>
+	</s:Rect>
+	<s:Image id="btnMenu" left="20" top="35" width="64" height="64" buttonMode="true"
+			 click="onShowDefaultCalloutClick()" smooth="true" smoothingQuality="high"
+			 source="images/img_lista.png"/>
+	<s:Image id="img" top="150" width="256" height="256" horizontalCenter="0" scaleMode="letterbox"
+			 smooth="true" smoothingQuality="high" source="images/editphoto.png"/>
+	<s:Label top="55" color="#474747" fontSize="28" horizontalCenter="0"
+			 text="{data.getItemAt(0).nombre + ' ' + data.getItemAt(0).apellidos}"/>
+	<s:Label left="20" bottom="20" text="Powered by @sphairo" styleName="customStyle"/>
+	<s:Image id="imgCorreo" right="20" bottom="20" width="128" height="128"
+			 click="emailIcon_clickHandler()" smooth="true" smoothingQuality="high"
+			 source="images/email.png"/>
+</s:View>

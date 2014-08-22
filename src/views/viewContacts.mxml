@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:skins="skins.*"
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		actionBarVisible="false" tabBarVisible="false" xmlns:renders="renders.*" creationComplete="selectContacts()">
+	<fx:Script source="../Class/ViewContacts.as"/>
+	
+	<fx:Declarations>
+		<s:Parallel id="parallel" duration="1500" startDelay="1" target="{header}">
+			<mx:Move yFrom="-100" yTo="0"/>
+		</s:Parallel>
+	</fx:Declarations>
+	
+	<s:Label top="40" color="#474747" fontSize="34" fontStyle="italic" horizontalCenter="0"
+			 text="Contactos"/>
+	<s:VGroup y="100" width="80%" height="70%" horizontalCenter="0">
+		<s:TextInput id="txtCelular" width="100%" height="8%" fontSize="18" prompt="*Celular"/>
+		<s:TextInput id="txtNombre" width="100%" height="8%" fontSize="18" prompt="*Nombre(s)"/>
+		<s:TextInput id="txtEmail" width="100%" height="8%" fontSize="18" prompt="*Email"/>
+		<s:Label id="lblError" color="#FF0000" fontSize="28"/>
+		<renders:renderBtnSave click="btnguardar1_clickHandler(event)"/>
+	</s:VGroup>
+	<s:VGroup width="100%" horizontalCenter="0" verticalCenter="400">
+		<s:List width="100%" height="100%" contentBackgroundAlpha="0.0" dataProvider="{contactList}"
+				itemRenderer="renders.renderContact"/>
+	</s:VGroup>
+	
+	<s:Rect id="header" y="0" width="100%" height="33">
+		<s:fill>
+			<s:BitmapFill source="@Embed('/images/fondo_header.png')" fillMode="repeat"/>
+		</s:fill>
+	</s:Rect>
+</s:View>

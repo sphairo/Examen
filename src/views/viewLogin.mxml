@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		xmlns:skins="skins.*"
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		xmlns:renders="renders.*"
+		actionBarVisible="false" tabBarVisible="false" title="HomeView">
+	
+	<fx:Script source="../Class/ViewLogin.as"/>
+	
+	<fx:Declarations>
+		<s:Parallel id="parallel2" duration="200" target="{btnRegistrarse}">
+			<s:Fade alphaFrom="1" alphaTo="0.5"/>
+		</s:Parallel>
+		<s:Parallel id="parallel3" duration="200" target="{btnEntrar}">
+			<s:Fade alphaFrom="1" alphaTo="0.5"/>
+		</s:Parallel>
+	</fx:Declarations>
+	<renders:renderBtnRegister id="btnRegistrarse" click="btnRegistrarse_clickHandler(event)"/>
+	<s:Image id="img" y="30" width="254" height="254" horizontalCenter="0" smooth="true"
+			 smoothingQuality="high" source="images/User.png"/>
+	<s:VGroup width="80%" height="100%" horizontalCenter="0" verticalCenter="150">
+		<s:TextInput id="txtUser" width="100%" height="8%" fontSize="18" prompt="Usuario"/>
+		<s:TextInput id="txtPassword" width="100%" height="8%" displayAsPassword="true" fontSize="18"
+					 prompt="Contraseña"/>
+		<renders:renderBtnEntrar id="btnEntrar" click="btnEntrar_clickHandler(event)"/>
+	</s:VGroup>
+	<s:Label id="lbl" bottom="80" color="#FF0101" fontSize="24" fontStyle="italic"
+			 horizontalCenter="0"/>
+</s:View>

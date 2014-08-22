@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+		 xmlns:s="library://ns.adobe.com/flex/spark"
+		 width="100%" height="150">
+	<s:Image horizontalCenter="0" scaleMode="zoom" smooth="true" smoothingQuality="high"
+			 source="images/btn_cercano_ciudad.png" verticalCenter="20"/>
+	<s:Label color="#FFFFFF" fontSize="28" horizontalCenter="0" text="Entrar" verticalCenter="10"/>
+</s:Group>

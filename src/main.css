@@ -1,0 +1,19 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+
+s|View{
+	actionBarVisible:false; 
+	tabBarVisible:false;
+	skinClass:ClassReference("skins.skinBackgroundApplication");
+}
+
+@font-face { 
+	src: url("fonts/font_amcharts.ttf"); 
+	fontFamily: myFontFamily; 
+	embedAsCFF: true; 
+}       
+.customStyle {
+	fontFamily: myFontFamily;
+	fontSize:28;
+	color:#474747;
+} 
